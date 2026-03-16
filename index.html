@@ -4,8 +4,7 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>INDI-POD IP-1</title>
+<title>Indi-Pod IP-1</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
@@ -14,8 +13,8 @@
 body{
 font-family:Inter, sans-serif;
 margin:0;
-background:#f5f7fa;
-color:#0f172a;
+background:#f6f7f9;
+color:#1e293b;
 scroll-behavior:smooth;
 }
 
@@ -25,17 +24,16 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:22px 80px;
+padding:20px 80px;
 background:white;
+box-shadow:0 2px 12px rgba(0,0,0,0.05);
 position:sticky;
 top:0;
 z-index:10;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 nav h2{
 font-weight:800;
-letter-spacing:1px;
 }
 
 nav a{
@@ -45,88 +43,112 @@ color:#475569;
 font-weight:500;
 }
 
-.deck-btn{
-background:#0f172a;
+.cta{
+background:#ff6a00;
 color:white;
-padding:10px 20px;
+padding:10px 18px;
 border-radius:8px;
 }
 
 /* HERO */
 
 .hero{
+
 display:flex;
-align-items:center;
 justify-content:space-between;
+align-items:center;
 padding:120px 10%;
+gap:60px;
+
 }
 
 .hero h1{
-font-size:64px;
+font-size:68px;
+line-height:1.05;
 margin-bottom:20px;
-}
-
-.hero span{
-color:#64748b;
 }
 
 .hero p{
 font-size:20px;
 color:#64748b;
-max-width:500px;
+max-width:600px;
 }
 
-.hero img{
-width:480px;
+.hero strong{
+color:#0f172a;
+}
+
+.hero-buttons{
+margin-top:25px;
+}
+
+button{
+background:#ff6a00;
+border:none;
+padding:16px 28px;
+color:white;
+font-weight:600;
+border-radius:10px;
+cursor:pointer;
+}
+
+.hero-images{
+display:flex;
+gap:20px;
+}
+
+.hero-images img{
+width:260px;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,0.12);
 animation:float 4s ease-in-out infinite;
 }
 
 @keyframes float{
 0%{transform:translateY(0)}
-50%{transform:translateY(-15px)}
+50%{transform:translateY(-12px)}
 100%{transform:translateY(0)}
 }
 
-button{
-padding:14px 28px;
-border:none;
-border-radius:10px;
-background:#0f172a;
-color:white;
-font-weight:600;
-margin-top:20px;
-cursor:pointer;
-}
+/* DIVIDER */
 
-/* SECTIONS */
-
-section{
-padding:120px 12%;
+.divider{
+height:1px;
+background:#e2e8f0;
+margin:100px 10%;
 }
 
 /* PROBLEM */
 
+section{
+padding:100px 10%;
+}
+
 .problem-grid{
+
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:30px;
 margin-top:40px;
+
 }
 
 .card{
+
 background:white;
-padding:40px;
+padding:35px;
 border-radius:16px;
 box-shadow:0 10px 30px rgba(0,0,0,0.06);
 transition:transform .3s;
+
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-8px);
 }
 
 .number{
-color:#f97316;
+color:#ff6a00;
 font-weight:800;
 margin-bottom:10px;
 }
@@ -134,62 +156,81 @@ margin-bottom:10px;
 /* ENGINEERING */
 
 .engineering{
+
 display:flex;
 gap:80px;
 align-items:center;
+
 }
 
 .engineering img{
+
 width:450px;
 border-radius:20px;
+
 }
 
 .spec{
+
 display:flex;
 justify-content:space-between;
 padding:18px 0;
 border-bottom:1px solid #e2e8f0;
+
 }
 
 /* ECONOMICS */
 
 .economics-grid{
+
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:30px;
 margin-top:40px;
+
 }
 
-/* USE CASE IMAGES */
+/* USE CASE */
 
 .gallery{
+
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:25px;
 margin-top:40px;
+
 }
 
 .gallery img{
+
 width:100%;
 border-radius:12px;
+box-shadow:0 15px 30px rgba(0,0,0,0.1);
 transition:transform .4s;
+
 }
 
 .gallery img:hover{
+
 transform:scale(1.05);
+
 }
 
 /* SCROLL ANIMATION */
 
 .fade{
+
 opacity:0;
 transform:translateY(40px);
 transition:all .8s ease;
+
 }
 
 .fade.show{
+
 opacity:1;
 transform:translateY(0);
+
 }
 
 </style>
@@ -200,21 +241,22 @@ transform:translateY(0);
 
 <nav>
 
-<h2>INDI-POD</h2>
+<h2>Indi-Pod</h2>
 
 <div>
 
 <a href="#problem">Problem</a>
 <a href="#solution">Solution</a>
-<a href="#engineering">Engineering</a>
-<a href="#economics">Economics</a>
+<a href="#product">Product</a>
+<a href="#business">Business</a>
 <a href="#market">Market</a>
 
-<a class="deck-btn" href="investor.html">Investor Deck</a>
+<a class="cta" href="investor.html">Investor Deck</a>
 
 </div>
 
 </nav>
+
 
 <!-- HERO -->
 
@@ -222,33 +264,60 @@ transform:translateY(0);
 
 <div>
 
-<p style="color:#f97316;font-weight:700">PROJECT IP-1</p>
-
-<h1>Urban Mobility,<br><span>Re-Engineered.</span></h1>
+<h1>Your Urban<br>Freedom</h1>
 
 <p>
 
-The IP-1 is an ultra-compact electric quadricycle built to solve India's last-20km mobility crisis.
+Meet <strong>Indi-Pod IP-1</strong> — the ultra-compact electric quadricycle engineered for India's chaotic urban environments.
 
 </p>
 
-<button>Request Deck</button>
+<p>
+
+Combining the <strong>agility of a scooter</strong>, the <strong>safety of a car</strong>, and the <strong>economics of an EV</strong>, Indi-Pod redefines how cities move. Built specifically for dense streets, unpredictable traffic, and last-mile logistics.
+
+</p>
+
+<p>
+
+From daily commutes to quick-commerce deliveries, the Indi-Pod transforms a single vehicle into a **dual-purpose urban mobility platform**.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="investor.html">
+
+<button>Request Investor Deck</button>
+
+</a>
 
 </div>
 
-<img src="images/ad3.png">
+</div>
+
+<div class="hero-images">
+
+<img src="images/ad5.png">
+<img src="images/ad6.png">
+
+</div>
 
 </section>
+
+
+<div class="divider"></div>
+
 
 <!-- PROBLEM -->
 
 <section id="problem" class="fade">
 
-<h1>The Crisis of Congestion.</h1>
+<h1>The Crisis of Congestion</h1>
 
-<p style="color:#64748b">
+<p style="color:#64748b; max-width:700px">
 
-India's urban infrastructure is failing. Cars are too large and scooters too dangerous.
+Urban infrastructure is struggling to keep up with explosive growth. Traditional vehicles are either too large for crowded roads or too unsafe for daily commuting.
 
 </p>
 
@@ -260,7 +329,11 @@ India's urban infrastructure is failing. Cars are too large and scooters too dan
 
 <h3>Spatial Inefficiency</h3>
 
-<p>Cars occupy 10m² to transport just 1.2 people.</p>
+<p>
+
+Cars occupy excessive road space while transporting only 1-2 passengers.
+
+</p>
 
 </div>
 
@@ -270,7 +343,11 @@ India's urban infrastructure is failing. Cars are too large and scooters too dan
 
 <h3>Exposure Risk</h3>
 
-<p>2-wheelers account for 45% of urban road fatalities.</p>
+<p>
+
+Two-wheelers expose riders to accidents, pollution, and extreme weather.
+
+</p>
 
 </div>
 
@@ -280,7 +357,11 @@ India's urban infrastructure is failing. Cars are too large and scooters too dan
 
 <h3>CAPEX Barrier</h3>
 
-<p>Entry cars cost ₹5-8 lakh, beyond the mass market.</p>
+<p>
+
+Entry-level cars remain unaffordable for millions of urban commuters.
+
+</p>
 
 </div>
 
@@ -288,11 +369,15 @@ India's urban infrastructure is failing. Cars are too large and scooters too dan
 
 </section>
 
+
+<div class="divider"></div>
+
+
 <!-- ENGINEERING -->
 
-<section id="engineering" class="fade">
+<section id="product" class="fade">
 
-<h1>Built for the Chaos.</h1>
+<h1>Built for the Chaos</h1>
 
 <div class="engineering">
 
@@ -302,15 +387,8 @@ India's urban infrastructure is failing. Cars are too large and scooters too dan
 
 <div class="spec">
 
-<span>Chassis</span>
-<b>High-Tensile Steel Spaceframe</b>
-
-</div>
-
-<div class="spec">
-
-<span>Climate Control</span>
-<b>Enclosed HVAC Cabin</b>
+<span>Vehicle Width</span>
+<b>1.1m Lane-Splitting Design</b>
 
 </div>
 
@@ -323,15 +401,22 @@ India's urban infrastructure is failing. Cars are too large and scooters too dan
 
 <div class="spec">
 
-<span>Cargo Volume</span>
-<b style="color:#f97316">300L</b>
+<span>Electric Range</span>
+<b>120 km</b>
 
 </div>
 
 <div class="spec">
 
-<span>Footprint Width</span>
-<b>1.1m</b>
+<span>Cargo Mode</span>
+<b>300L Convertible</b>
+
+</div>
+
+<div class="spec">
+
+<span>Climate Control</span>
+<b>Fully Enclosed Cabin</b>
 
 </div>
 
@@ -341,13 +426,15 @@ India's urban infrastructure is failing. Cars are too large and scooters too dan
 
 </section>
 
+
+<div class="divider"></div>
+
+
 <!-- ECONOMICS -->
 
-<section id="economics" class="fade">
+<section id="business" class="fade">
 
-<p style="color:#f97316;font-weight:700">UNIT ECONOMICS</p>
-
-<h1>Built for Profitability.</h1>
+<h1>Built for Profitability</h1>
 
 <div class="economics-grid">
 
@@ -355,15 +442,23 @@ India's urban infrastructure is failing. Cars are too large and scooters too dan
 
 <h3>₹1.99L Entry Price</h3>
 
-<p>Battery-as-a-Service reduces upfront cost.</p>
+<p>
+
+Battery-as-a-Service dramatically lowers upfront ownership cost.
+
+</p>
 
 </div>
 
 <div class="card">
 
-<h3>Dual-Use Vehicle</h3>
+<h3>Dual-Use Platform</h3>
 
-<p>Commute in the morning, deliver in the afternoon.</p>
+<p>
+
+Commute during the day and convert into delivery cargo mode in seconds.
+
+</p>
 
 </div>
 
@@ -371,7 +466,11 @@ India's urban infrastructure is failing. Cars are too large and scooters too dan
 
 <h3>Advertising Revenue</h3>
 
-<p>Exterior panels enable localized geo-ads.</p>
+<p>
+
+Exterior panels become mobile geo-targeted ad inventory.
+
+</p>
 
 </div>
 
@@ -379,23 +478,33 @@ India's urban infrastructure is failing. Cars are too large and scooters too dan
 
 </section>
 
-<!-- MARKET / USE CASE -->
+
+<div class="divider"></div>
+
+
+<!-- USE CASE -->
 
 <section id="market" class="fade">
 
 <h1>Real-World Applications</h1>
 
+<p style="color:#64748b; max-width:700px">
+
+Indi-Pod is designed to support multiple real-world mobility scenarios across India's dense urban ecosystems.
+
+</p>
+
 <div class="gallery">
 
 <img src="images/ad1.png">
 <img src="images/ad2.png">
-<img src="images/ad5.png">
-<img src="images/ad6.png">
+<img src="images/ad3.png">
 <img src="images/prototype.png">
 
 </div>
 
 </section>
+
 
 <script>
 
@@ -414,4 +523,5 @@ observer.observe(el)
 </script>
 
 </body>
+
 </html>

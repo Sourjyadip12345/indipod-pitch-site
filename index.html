@@ -1,290 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Indi-Pod IP-1 | Reinventing Urban Mobility</title>
+<title>INDI-POD IP-1</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 
 body{
-font-family: Arial, Helvetica, sans-serif;
+font-family:Inter, sans-serif;
 margin:0;
-background:#fafafa;
-color:#333;
+background:#f5f7fa;
+color:#0f172a;
+scroll-behavior:smooth;
 }
 
-.navbar{
+/* NAVBAR */
+
+nav{
 display:flex;
 justify-content:space-between;
-padding:20px 60px;
+align-items:center;
+padding:22px 80px;
 background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
 position:sticky;
 top:0;
+z-index:10;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
-.navbar a{
-margin-left:25px;
-text-decoration:none;
-color:#333;
-font-weight:600;
+nav h2{
+font-weight:800;
+letter-spacing:1px;
 }
+
+nav a{
+margin-left:30px;
+text-decoration:none;
+color:#475569;
+font-weight:500;
+}
+
+.deck-btn{
+background:#0f172a;
+color:white;
+padding:10px 20px;
+border-radius:8px;
+}
+
+/* HERO */
 
 .hero{
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:100px;
-background:#f5f5f5;
+padding:120px 10%;
 }
 
-.hero-left{
-max-width:500px;
-}
-
-.hero-left h1{
-font-size:60px;
+.hero h1{
+font-size:64px;
 margin-bottom:20px;
 }
 
-.hero-left p{
+.hero span{
+color:#64748b;
+}
+
+.hero p{
 font-size:20px;
+color:#64748b;
+max-width:500px;
 }
 
 .hero img{
-width:500px;
+width:480px;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
 }
 
 button{
-background:#ff6a00;
-color:white;
-padding:14px 26px;
+padding:14px 28px;
 border:none;
-font-size:16px;
-cursor:pointer;
-border-radius:4px;
+border-radius:10px;
+background:#0f172a;
+color:white;
+font-weight:600;
 margin-top:20px;
+cursor:pointer;
 }
 
-.section{
-padding:90px 12%;
-text-align:center;
+/* SECTIONS */
+
+section{
+padding:120px 12%;
 }
 
-.dark{
-background:#f3f3f3;
-}
+/* PROBLEM */
 
-.grid{
+.problem-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
-margin-top:50px;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:40px;
 }
 
 .card{
 background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 4px 20px rgba(0,0,0,0.08);
-}
-
-.product{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:60px;
-margin-top:50px;
-}
-
-.product img{
-width:450px;
-}
-
-.stats{
-display:flex;
-justify-content:center;
-gap:120px;
-margin-top:40px;
-}
-
-.stats h1{
-color:#ff6a00;
-font-size:48px;
-}
-
-.ads{
-display:flex;
-justify-content:center;
-gap:40px;
-margin-top:40px;
-}
-
-.ads img{
-width:350px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-
-footer{
-text-align:center;
 padding:40px;
-background:#111;
-color:white;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.06);
+transition:transform .3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.number{
+color:#f97316;
+font-weight:800;
+margin-bottom:10px;
+}
+
+/* ENGINEERING */
+
+.engineering{
+display:flex;
+gap:80px;
+align-items:center;
+}
+
+.engineering img{
+width:450px;
+border-radius:20px;
+}
+
+.spec{
+display:flex;
+justify-content:space-between;
+padding:18px 0;
+border-bottom:1px solid #e2e8f0;
+}
+
+/* ECONOMICS */
+
+.economics-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:40px;
+}
+
+/* USE CASE IMAGES */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+margin-top:40px;
+}
+
+.gallery img{
+width:100%;
+border-radius:12px;
+transition:transform .4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* SCROLL ANIMATION */
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
 }
 
 </style>
 
 </head>
 
-
 <body>
 
-
-<header class="navbar">
-
-<h2>Indi-Pod</h2>
-
 <nav>
-<a href="#problem">Problem</a>
-<a href="#solution">Solution</a>
-<a href="#product">Product</a>
-<a href="#business">Business</a>
-<a href="#market">Market</a>
-</nav>
 
-</header>
-
-
-
-<section class="hero">
-
-<div class="hero-left">
-
-<h1>Your Urban Freedom</h1>
-
-<p>
-
-Meet <b>Indi-Pod IP-1</b> — the ultra-compact electric quadricycle engineered for India's chaotic cities.
-
-</p>
-
-<p>
-
-Imagine the agility of a scooter, the safety of a car, and the economics of an EV — all in one intelligent urban vehicle.
-
-</p>
-
-<a href="investor.html">
-
-<button>Request Investor Deck</button>
-
-</a>
-
-</div>
-
-
-<img src="images/prototype.png">
-
-</section>
-
-
-
-<section id="problem" class="section">
-
-<h2>The Urban Mobility Crisis</h2>
-
-<p>
-
-Every day millions of commuters waste hours in traffic, struggle with parking, and face unsafe travel conditions.
-
-Traditional mobility solutions simply weren’t built for India’s dense urban environment.
-
-</p>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>Gridlocked Cities</h3>
-
-<p>
-
-Cars dominate road space but crawl through congestion, wasting time and energy.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Unsafe Two Wheelers</h3>
-
-<p>
-
-Scooters expose riders to dust, rain, accidents, and extreme weather conditions.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Expensive Car Ownership</h3>
-
-<p>
-
-Entry cars cost ₹5-8 lakh and require large parking space.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section id="solution" class="section dark">
-
-<h2>A New Mobility Category</h2>
-
-<p>
-
-Indi-Pod introduces a revolutionary concept: the <b>Electric Micro-Quadricycle</b>.
-
-Smaller than a car, safer than a scooter, and built specifically for dense urban environments.
-
-</p>
-
-</section>
-
-
-
-<section id="product" class="section">
-
-<h2>Meet the Indi-Pod IP-1</h2>
-
-<div class="product">
-
-<img src="images/ad3.png">
+<h2>INDI-POD</h2>
 
 <div>
 
-<ul style="text-align:left;font-size:18px">
+<a href="#problem">Problem</a>
+<a href="#solution">Solution</a>
+<a href="#engineering">Engineering</a>
+<a href="#economics">Economics</a>
+<a href="#market">Market</a>
 
-<li>Ultra narrow 1.1m footprint for lane splitting</li>
-<li>Climate-controlled enclosed cabin</li>
-<li>120km electric range</li>
-<li>70km/h top speed</li>
-<li>300L cargo conversion for quick commerce</li>
+<a class="deck-btn" href="investor.html">Investor Deck</a>
 
-</ul>
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero fade">
+
+<div>
+
+<p style="color:#f97316;font-weight:700">PROJECT IP-1</p>
+
+<h1>Urban Mobility,<br><span>Re-Engineered.</span></h1>
+
+<p>
+
+The IP-1 is an ultra-compact electric quadricycle built to solve India's last-20km mobility crisis.
+
+</p>
+
+<button>Request Deck</button>
+
+</div>
+
+<img src="images/ad3.png">
+
+</section>
+
+<!-- PROBLEM -->
+
+<section id="problem" class="fade">
+
+<h1>The Crisis of Congestion.</h1>
+
+<p style="color:#64748b">
+
+India's urban infrastructure is failing. Cars are too large and scooters too dangerous.
+
+</p>
+
+<div class="problem-grid">
+
+<div class="card">
+
+<div class="number">01</div>
+
+<h3>Spatial Inefficiency</h3>
+
+<p>Cars occupy 10m² to transport just 1.2 people.</p>
+
+</div>
+
+<div class="card">
+
+<div class="number">02</div>
+
+<h3>Exposure Risk</h3>
+
+<p>2-wheelers account for 45% of urban road fatalities.</p>
+
+</div>
+
+<div class="card">
+
+<div class="number">03</div>
+
+<h3>CAPEX Barrier</h3>
+
+<p>Entry cars cost ₹5-8 lakh, beyond the mass market.</p>
 
 </div>
 
@@ -292,23 +288,74 @@ Smaller than a car, safer than a scooter, and built specifically for dense urban
 
 </section>
 
+<!-- ENGINEERING -->
 
+<section id="engineering" class="fade">
 
-<section id="business" class="section dark">
+<h1>Built for the Chaos.</h1>
 
-<h2>Built for Profitability</h2>
+<div class="engineering">
 
-<div class="grid">
+<img src="images/ad4.png">
+
+<div>
+
+<div class="spec">
+
+<span>Chassis</span>
+<b>High-Tensile Steel Spaceframe</b>
+
+</div>
+
+<div class="spec">
+
+<span>Climate Control</span>
+<b>Enclosed HVAC Cabin</b>
+
+</div>
+
+<div class="spec">
+
+<span>Top Speed</span>
+<b>70 km/h</b>
+
+</div>
+
+<div class="spec">
+
+<span>Cargo Volume</span>
+<b style="color:#f97316">300L</b>
+
+</div>
+
+<div class="spec">
+
+<span>Footprint Width</span>
+<b>1.1m</b>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ECONOMICS -->
+
+<section id="economics" class="fade">
+
+<p style="color:#f97316;font-weight:700">UNIT ECONOMICS</p>
+
+<h1>Built for Profitability.</h1>
+
+<div class="economics-grid">
 
 <div class="card">
 
 <h3>₹1.99L Entry Price</h3>
 
-<p>
-
-Battery-as-a-Service drastically reduces upfront ownership cost.
-
-</p>
+<p>Battery-as-a-Service reduces upfront cost.</p>
 
 </div>
 
@@ -316,11 +363,7 @@ Battery-as-a-Service drastically reduces upfront ownership cost.
 
 <h3>Dual-Use Vehicle</h3>
 
-<p>
-
-Commute to work in the morning, earn through quick-commerce deliveries in the afternoon.
-
-</p>
+<p>Commute in the morning, deliver in the afternoon.</p>
 
 </div>
 
@@ -328,11 +371,7 @@ Commute to work in the morning, earn through quick-commerce deliveries in the af
 
 <h3>Advertising Revenue</h3>
 
-<p>
-
-Exterior display panels enable localized geo-targeted ads.
-
-</p>
+<p>Exterior panels enable localized geo-ads.</p>
 
 </div>
 
@@ -340,68 +379,39 @@ Exterior display panels enable localized geo-targeted ads.
 
 </section>
 
+<!-- MARKET / USE CASE -->
 
+<section id="market" class="fade">
 
-<section id="market" class="section">
+<h1>Real-World Applications</h1>
 
-<h2>Market Opportunity</h2>
-
-<div class="stats">
-
-<div>
-
-<h1>15M+</h1>
-<p>Urban commuters</p>
-
-</div>
-
-<div>
-
-<h1>$10B+</h1>
-<p>Micro mobility opportunity</p>
-
-</div>
-
-<div>
-
-<h1>30%</h1>
-<p>EV adoption target</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section class="section dark">
-
-<h2>Real World Use Cases</h2>
-
-<div class="ads">
+<div class="gallery">
 
 <img src="images/ad1.png">
-
 <img src="images/ad2.png">
+<img src="images/ad5.png">
+<img src="images/ad6.png">
+<img src="images/prototype.png">
 
 </div>
 
 </section>
 
+<script>
 
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show")
+}
+})
+})
 
-<footer>
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el)
+})
 
-<p>
-
-Indi-Pod | Designed in India for the Future of Urban Mobility
-
-</p>
-
-</footer>
-
+</script>
 
 </body>
-
 </html>
